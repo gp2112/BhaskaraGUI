@@ -1,4 +1,4 @@
 # BhaskaraGUI
 Resolve Equações do segundo grau com GUI
 
-<img src="http://imgur.com/a/n9iQq">
+<img src="https://i.imgur.com/44wqurO.png">
