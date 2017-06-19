@@ -8,12 +8,20 @@ def calc():
     num_b1 = int(num_b.get())
     num_c1 = int(num_c.get())
     delt = num_b1**2 - 4*num_a1*num_c1
-    delta_l["text"]="Delta = ", delt
-    x1 = - num_b1 + math.sqrt(delt)
-    x2 = - num_b1 - math.sqrt(delt)
+    delta_l["text"]="Delta = %d"% delt
+    
+    if(delt > 0):
+        x1 = - num_b1 + math.sqrt(delt)
+        x2 = - num_b1 - math.sqrt(delt)
 
-    x1_r["text"]="x1 = ", x1
-    x2_r["text"]="x2 = ", x2
+        x1_r["text"]=("x1 =  %d"% x1)
+        x2_r["text"]=("x2 = %d"% x2)
+
+        model["text"] = "Siga o modelo: ax²+bx+c=0"
+    else:
+        model["text"] = "Não existe raiz quadrada com delta negativo"
+
+    
 
 
 model = Label(janela, text="Siga o modelo: ax²+bx+c=0")
@@ -53,6 +61,6 @@ start = Button(janela, width="20", text="Calcular", command=calc)
 start.place(x=80 ,y=300)
 
 
-janela.geometry("300x400+760+220")
+janela.geometry("400x400+760+220")
 janela.title("Equação do segundo grau - Bháskara")
 janela.mainloop()
